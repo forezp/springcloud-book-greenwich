@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: uaa-service
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_cloud_auth_chapter15?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        tags: dev
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 5s
+        instance-id:  ${spring.application.name}:${server.port}
+        enabled: true
+        service-name: ${spring.application.name}
+        port: ${server.port}
+        register: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 5555
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

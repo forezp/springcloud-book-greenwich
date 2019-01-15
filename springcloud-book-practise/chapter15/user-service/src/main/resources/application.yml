@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: user-service
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_cloud_auth_chapter15?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        tags: dev
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 5s
+        instance-id: ${spring.application.name}:${server.port}
+        enabled: true
+        service-name: ${spring.application.name}
+        register: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 9090
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:  #default全局有效，service id指定应用有效
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制,为true,则超时作为熔断根据
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000 #断路器超时时间，默认1000ms
+
+
+

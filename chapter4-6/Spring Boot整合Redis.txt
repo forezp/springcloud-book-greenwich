@@ -1,0 +1,36 @@
+Spring Boot整合Redis步骤：
+
+1. Window下安装Reids版本。 下载地址： https://github.com/MSOpenTech/redis/releases 下载.msi 版本， 一直单击“下一步”完成安装即可。
+
+2. Pom文件中引入:
+             <dependency>
+    			<groupId>org.springframework.boot</groupId>
+    			<artifactId>spring-boot-starter-data-redis</artifactId>
+    		</dependency>
+
+3. 在application.yml中配置redis
+        spring:
+          redis:
+            host: localhost
+            port: 6379
+            database: 1
+            jedis:
+              pool:
+                max-active: 8
+                max-wait: 1
+                max-idle: 500
+                min-idle: 0
+            timeout: 0
+
+4. 创建RedisDao
+        数据操作层的RedisDao 类通过＠Repository 注解来注入Spring IoC 容器中， 该类是通过RedisTemplate 来访问Redis的。
+        通过注入StringRedisTemplate 的Bean 来对Redis 数据库中的字符串类型的数据进行操作， 写了两个方法，
+        包括向Red is 中设置String 类型的数据和从Redis中读取String 类型的数据。
+
+5. 创建SpringBootTest类
+        在SpringBootTest 的测试类中注入RedisDao ， 首先通过RedisDao 向Redis 设置两组字符串值， 即name 为forezp,
+        age 为17 的两组字符串，然后分别通过RedisDao 从Red is 中读取这两个值，并打印山来。
+
+
+
+

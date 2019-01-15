@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: service-hi
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_cloud_auth?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        tags: dev
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 5s
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        enabled: true
+        service-name: ${spring.application.name}
+        register: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8762
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:5000/uaa/users/current
+  client: # client信息与service-auth中的OAuth2AuthorizationConfig类的configure方法中的ClientDetailsServiceConfigurer中的client信息要一致
+    clientId: service-hi
+    clientSecret: 123456
+    accessTokenUri: http://localhost:5000/uaa/oauth/token
+    grant-type: client_credentials,password
+    scope: server
+
+

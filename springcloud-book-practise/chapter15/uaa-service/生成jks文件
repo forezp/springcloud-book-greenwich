@@ -1,0 +1,28 @@
+在AuthorizationServerEndpointsConfigurer 的配置中， 配置JwtTokenStore 时需要使用jks文件作为Token 加密的秘钥。
+我们使用jdk生成证书文件，在命令行运行下面的语句：
+
+keytool -genkeypair -alias fzp-jwt -validity 3650 -keyalg RSA -dname "CN=jwt,OU=jwt,O=jwt,L=zurich,S=zurich,C=CH" -keypass fzp123 -keystore fzp-jwt.jks -storepass fzp123
+
+-alias 选项为别名，-keypass 和 -storepass 为密码选项， -validity 为配置jks 文件的过期时间（ 单位： 天）
+获取的fzp-jwt.jks作为私钥，只允许Uaa服务持有，用作加密JWT。
+
+user-service是资源服务，使用fzp-jwt.jks对应的公钥进行解密JWT。 获取jks文件的公钥命令如下：
+    keytool -list -rfc --keystore fzp-jwt.jks | openssl X509 -inform pem -pubkey
+
+在计算机终端输入上面的命令，提示需要密码，本例的密码为“ fzpl23 ”，输入即可， 显
+示的公钥信息如下：xxxx
+
+新建一个public.cert 文件，将上面的公钥信息复制到public.cert 文件中并保存。并将
+public.cert 文件放在资源服务的工程的Resource 目录下。
+
+Maven 在项目编译时，可能会将jks 文件编译，导致jks 文件乱码， 最后不可用。需要在工程的porn 文件中添加以下内容：
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>cert</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jks</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>

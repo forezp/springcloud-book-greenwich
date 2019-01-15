@@ -1,0 +1,51 @@
+1. Spring Boot整合JPA
+
+    JPA 全称为JAVA Persistence API ，它是一个数据持久化的类和方法的集合。JPA 的目标是制定一个由很多数据库供应商实现的API ，开发人员可以通过编码实现该API 。目前，在Java
+    项目开发巾提到JPA 一般是指用Hibernate 的实现，因为在Java 的ORM 框架中，只有Hibernate实现得最好。本节以案例的形式来讲述如何在Spring Boot 工程中使用JPA 。
+    另外， 案例使用的数据库为MySQL 数据库， 需要提前安装好。
+
+2. 整合JPA步骤：
+    A. pom文件新增引用：
+                <dependency>
+        			<groupId>org.springframework.boot</groupId>
+        			<artifactId>spring-boot-starter-data-jpa
+        			</artifactId>
+        		</dependency>
+
+        		<dependency>
+        			<groupId>mysql</groupId>
+        			<artifactId>mysql-connector-java</artifactId>
+        			<scope>runtime</scope>
+        		</dependency>
+
+    B. 在application.yml文件中配置数据源  (数据库spring-cloud要自己创建, 表会自动生成)
+        spring:
+          datasource:
+            driver-class-name: com.mysql.jdbc.Driver
+            url: jdbc:mysql://localhost:3306/spring-cloud?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+            username: root
+            password: 123456
+
+          jpa:
+            hibernate:
+              ddl-auto: create  # 第一次建表create  后面用update
+            show-sql: true
+
+    C. 创建实体对象 示例代码见：com.forezp.entity.User.java
+        @Entity 注解表明该类是一个实体类，它和数据库的表名相对应：@Id 注解表明该变量对应于数据库中的Id, @GeneratedValue 注解配置I d 字段为自增长；@Column 表明该变量
+        对应于数据库表中的字段， unique = true 表明该变量对应于数据库表中的字段为唯一约束
+
+    D. 创建DAO 层 示例代码见：com.forezp.dao.UserDao.java
+        数据访问层DAO ， 通过编写一个UserDao 类， 该类继承JpaReposit。可的接口，继承之后就能对数据库进行读写操作， 包含了基本的单表查询的方法， 非常方便。在UserDao 类写－
+        个findByUsername 的方法，传入参数usemame, JPA 己经实现了根据某个字段去查找的方法，所以该方法可以根据usemame 字段从数据库中获取User 的数据，不需要做额外的编码。
+
+    E. 创建Service层 示例代码见：com.forezp.service.UserService.java
+        在UserService中注入UserDao,并写一个获取用户名的方法。
+
+    F. 创建Controller层 示例代码见：com.forezp.web.UserController.java
+        在UserController 类写一个Get 类型的API 接口， 其中需要说明的是@PathVariable 注解，可以获取RESTful 风格的Uri 路径上的参数。
+
+    G. 服务启动成功后，在数据库中插入数据：
+        INSERT INTO `spring_cloud_auth_chapter15`.`user` (`password`, `username`) VALUES ( '123456', 'test1');
+
+    H. 浏览器访问http://localhost:8080/user/forezp

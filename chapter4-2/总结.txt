@@ -1,0 +1,69 @@
+1. 读取配置项的几种方式：
+
+    A. 在变量上加@Value("${配置文件中的配置项名称}") ， 比如： @Value("${my.name}")  示例代码见： MiyaController 浏览器访问http://localhost:8080/miya
+
+    B. 将配置文件的属性赋给实体类
+
+        1. 在JavaBean上注解@ConfigurationProperties ，并加上配置的prefix ，例如本案例的"my",表示读取前缀为my开头的配置项。
+           另外需要在ConfigBean 类上加@Component 注解， Spring Boot 在启动时通过包扫描将该类作为一个Bean 注入IoC 容器中。
+            示例代码见：ConfigBean
+
+        2. 在Controller中读取配置实体ConfigBean，在Controller类上加上@EnableConfigurationProperties 注解,并指明配置Bean是ConfigBean，然后注入ConfigBean。
+            示例代码见：LucyController
+
+        3. 浏览器访问： http ://localhost:8080/1ucy
+
+    C. 自定义配置文件 (有时候配置项目太多，会分成多个配置文件)
+
+        1. 在JavaBean中加入@Configuration 、@PropertySource 和@ConfigurationProperties 注解。Configuration表示这是一个配置类，
+            PropertySource指定读取哪一个配置文件，ConfigurationProperties指读取配置文件中的哪些配置属性。
+            示例代码见：User
+
+        2. 在Controller中读取配置实体User，在Controller类上加上@EnableConfigurationProperties 注解,并指明Bean是User，然后注入 User。
+            示例代码见：LucyController
+
+        3. 浏览器访问： http ://localhost:8080/user
+
+2. 多个环境的配置文件
+        在实际的开发过程中，可能有多个不同环境的配置文件， 例如： 开发环境、测试环境、生产环境等。Spring Boot 支持程序启动时在配置文件applicaition.yml 中指定环境的配置文件，
+        配置文件的格式为application-{profile} .properties ，其中｛profile ｝对应环境标识，例如：
+         application-test.properties －一测试环境：
+         application-dev.properties 一一’开发环境；
+         application-prod.properties－一生产环境。
+
+        如何指定某个环境额配置文件： 只需要在application.yml 中加上spring.profiles.active 的配置，该配置指定采用哪一个profiles 。
+        例如使用application-dev.properties，则配置代码如下:
+        spring:
+         profiles:
+          active: dev
+        其中application-dev.yml 的配置文件中指定程序的启动端口，配置代码如下：
+        server:
+            port: 8082
+
+    启动环境，如果端口变成8082 就代表读取指定配置文件成功。
+
+3. 运行状态监控Actuator
+        Spring Boot 的Actuator 提供了运行状态监控的功能， Actuator 的监控数据可以通过REST 、远程shell 和JMX方式获得。在这里先来介绍通过REST方式查看Actuator 的节点的方法。
+
+        步骤：
+            A. POM中新增spring-boot-starter-actuator依赖
+            B. 配置文件中配置Actuator
+                management:
+                  endpoints:
+                    web:
+                      exposure:
+                        include: "*"
+                  endpoint:
+                    health:
+                      show-details: ALWAYS
+                  server:
+                    port: 9001 # 指定Actuator对外暴露的REST API接口端口为9001
+            C.访问Actuator
+                1. http://localhost:9001/actuator/health  查看运行程序的健康状态
+                2. http://localhost:9001/actuator/beans 查看运行程序的Bean
+                3. 使用Actuator关闭应该程序
+                    curl -X POST http://localhost:9001/actuator/shutdown  （运行此命令必须设置：management.endpoint.shutdown.enabled = true）
+
+    Actuator 是Spring Boot 的一个非常重要的功能， Actuator 为开发人员提供了Spring Boot的运行状态信息，通过Actuator 可以查看程序的运行状态的信息
+
+    Actuator详细介绍可以参考： https://blog.csdn.net/WYA1993/article/details/80540981

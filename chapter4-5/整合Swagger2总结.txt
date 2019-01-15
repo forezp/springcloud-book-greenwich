@@ -1,0 +1,45 @@
+Spring Boot整合Swagger2搭建Restful API在线文档
+
+整合Swagger2步骤：
+    1. pom文件新增引用：
+                <dependency>
+                    <groupId>io.springfox</groupId>
+                    <artifactId>springfox-swagger2</artifactId>
+                    <version>2.6.1</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>io.springfox</groupId>
+                    <artifactId>springfox-swagger-ui</artifactId>
+                    <version>2.6.1</version>
+                </dependency>
+
+    2. 配置Swagger2
+
+       A. 写一个配置类Swagger2 ，在类的上方加上@Configuration 注解， 表明是一个配置类，加上@EnableSwagger2 开启Swagger2 的功能。
+        在配置类Swagger2 中需要注入一个Docket 的Bean ， 该Bean 包含了apiInfo ，即基本API 文档的描述信息，以及包扫描的基本包名等信息。
+
+        示例代码见： com.forezp.config.Swagger2.java
+
+    3. 写生成文档的注解
+       Swagger2 通过注解来生成API 接口文档，文档信息包括接口名、请求方法、参数、返回信息等。通常’悄况下用于生成在线API 文档，以下的注解能够满足基本需求，注解及其描述如下。
+       口@Api ： 修饰整个类，用于描述Controller 类。
+       口@ApiOperation ：描述类的方法，或者说一个接口。
+       口@ApiParam ： 单个参数描述。
+       口@ApiModel ：用对象来接收参数。
+       口@ApiProperty ：用对象接收参数时，描述对象的一个字段。
+       口@ApiResponse: HTTP 响应的一个描述。
+       口@ApiResponses: HTTP 响应的整体描述。
+       口@Apilgnore ：使用该注解，表示Swagger2 忽略这个API 。
+       口@ApiError ： 发生错误返回的信息。
+       口@ApiParamlmplicit ： 一个请求参数。
+       口@ApiParamsimplicit ： 多个请求参数。
+
+    4. 创建Service层代码 代码见：com.forezp.service.UserService.java
+
+    5. 创建Controller  代码见：com.forezp.web.UserController.java
+        通过@ApiOperation 注解描述生成在线文档的具体API 的说明，其中value 值为该接口的名称，notes 值为该接口的详细文档说明。这样就可以让Swagger2 生成在线的API 接口文档了。
+        如果不需要某接扣生成文挡，只市要再加@Apilgnore 注解即可。
+
+    6. 启动服务，浏览器访问： http://localhost:8080/swagger-ui.html 查看在线API
+

@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+    shutdown:
+      enabled: true # 必须将此属性设置为true 才能执行 curl -X POST http://localhost:9001/actuator/shutdown 命令
+  server:
+    port: 9001 # 指定Actuator对外暴露的REST API接口端口为9001
+

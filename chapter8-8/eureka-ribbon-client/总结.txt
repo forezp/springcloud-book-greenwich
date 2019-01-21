@@ -1,0 +1,98 @@
+
+一： 编写Eureka Ribbon Client (演示 RestTemplate+Ribbon+Hystrix+Hystrix Dashboard功能):
+
+    1.在POM文件中引入依赖：
+                    <dependency>
+            			<groupId>org.springframework.cloud</groupId>
+            			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            		</dependency>
+
+            		<dependency>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                    </dependency>
+
+                    <dependency>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+                    </dependency>
+
+            		<dependency>
+            			<groupId>org.springframework.cloud</groupId>
+            			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            		</dependency>
+            		<dependency>
+            			<groupId>org.springframework.boot</groupId>
+            			<artifactId>spring-boot-starter-web</artifactId>
+            		</dependency>
+
+            		<dependency>
+            			<groupId>org.springframework.boot</groupId>
+            			<artifactId>spring-boot-starter-test</artifactId>
+            			<scope>test</scope>
+            		</dependency>
+
+            		<dependency>
+            			<groupId>org.springframework.boot</groupId>
+            			<artifactId>spring-boot-starter-actuator</artifactId>
+            		</dependency>
+
+    2. 配置application.yml
+        spring:
+          application:
+            name: eureka-ribbon-client
+
+        server:
+          port: 8765
+
+        eureka:
+          client:
+            service-url:
+              defaultZone: http://localhost:8761/eureka/
+
+    3. 在EurekaRibbonClientApplication上增加@EnableEurekaClient开启 Eureka Client的功能,增加@EnableHystrix功能开启Hystrix熔断器功能，
+        增加@EnableHystrixDashboard注解开启Hystrix Dashboard功能。
+        在日志中看到： DiscoveryClient_EUREKA-CLIENT/localhost:eureka-ribbon-client:8764 - registration status: 204 代表服务注册成功。
+
+    4. 新建一个RibbonConfig加上@Configuration注解，标识此类为配置类。 见代码com.forezp.config.RibbonConfig类。
+        在此类中为IoC 容器中注入一个RestTemplate 的Bean ， 并在这个Bean 上加上@LoadBalanced 注解，此时RestTemplate 就结合了
+        Ribbon 开启了负载均衡功能。
+
+    5. 写一个RibbonService类加上@Service注解，在该类的hi()方法用restTemplate调用eureka-client的API接口。
+            restTemplate中的Uri不需要使用硬编码（比如IP），只需要写服务名eureka-client即可程序会根据服务名称 eureka-client到本地缓存的注册中心列表去自动获取IP和端口信息。
+
+       在hi()方法上加＠HystrixCommand 注解。有了@HystrixCommand注解， hi()方法就启用Hystrix 熔断器的功能，其中， fallbackMethod 为处理回退（ fallback ）逻辑的方法。
+            在熔断器打开的状态下，会执行fall back 逻辑。fall back 的逻辑最好是返回一些静态的字符串，不需要处理复杂的逻辑，也不需要远程调度其他服务，这样方便执行快速失败，释放线程资源。
+            如果一定要在fallback 逻辑中远程调度其他服务，最好在远程调度其他服务时，也加上熔断器。
+
+    6. 写一个RibbonController类，为该类加上＠RestController 注解，开启RestController 的功能，写一个"/hi" Get 方法的接口，调用RibbonService 类的hi（）方法。
+
+    7. 启动eureka-server 见该项目的 总结.txt 说明, 1个eureka-client 见该项目的 总结.txt 说明。 (如果这两个服务已经启动了，不要再重复此步骤)
+
+    8. 启动Eureka-ribbon-client服务。
+
+    9. 在浏览器上访问Eureka Server主界面： http://localhost:8761/
+        在Instances currently registered with Eureka 中看到：
+        EUREKA-CLIENT	n/a (2)	(2)	UP (2) - localhost:eureka-client:8762
+        EUREKA-RIBBON-CLIENT	n/a (1)	(1)	UP (1) - localhost:eureka-ribbon-client:8765
+
+        代表Eureka-client与Eureka-ribbon-clinet服务已经启动成功。
+
+    6. 在浏览器上访问http://localhost:8765/hi?name=forezp， 浏览器会显示如下信息：
+        hi forezp,i am from port:8762
+
+    7. 新建一个com.forezp.servlet.HystrixStreamServlet.java类，加上@Component注解将对象注入IOC容易中，在此类中注入一个HystrixMetricsStreamServlet 的Bean。
+
+    8. 浏览器访问http://localhost:8765/hystrix.stream 地址：  (spring boot 2.0 Hystrix Dashboard需要注入步骤7中的HystrixMetricsStreamServlet)，否则http://localhost:8765/hystrix.stream报404错误
+        返回 ping:
+             ping:
+        或者 data:
+             ping:
+        代表访问成功。
+
+    9. 浏览器访问http://localhost:8765/hystrix 地址:
+        在Hystrix DashBoard 输入框中输入： http://localhost:8765/hystrix.stream 地址
+        在Title中输入：  forezp
+        点击  Monitor Stream 按钮
+
+        显示eureka-ribbon-client的Hystrix Dashboard 数据。 具体介绍见： https://github.com/Netflix/Hystrix 官方文档

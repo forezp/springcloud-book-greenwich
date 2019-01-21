@@ -1,0 +1,106 @@
+
+一： 编写Eureka Feign Client (演示 Feign+Hystrix+Hystrix Dashboard功能):
+
+    1.在POM文件中引入依赖：
+                <dependency>
+                			<groupId>org.springframework.cloud</groupId>
+                			<artifactId>spring-cloud-starter-openfeign</artifactId>
+                		</dependency>
+
+                		<dependency>
+                		<groupId>org.springframework.cloud</groupId>
+                		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                		</dependency>
+
+                		<dependency>
+                			<groupId>org.springframework.boot</groupId>
+                			<artifactId>spring-boot-starter-web</artifactId>
+                		</dependency>
+
+                		<dependency>
+                			<groupId>org.springframework.boot</groupId>
+                			<artifactId>spring-boot-starter-test</artifactId>
+                			<scope>test</scope>
+                		</dependency>
+
+                		<!-- feign 打开 Hystrix Dashboard 必须显示依赖下面3个引用-->
+                		<dependency>
+                			<groupId>org.springframework.boot</groupId>
+                			<artifactId>spring-boot-starter-actuator</artifactId>
+                		</dependency>
+
+                		<dependency>
+                			<groupId>org.springframework.cloud</groupId>
+                			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                		</dependency>
+
+                		<dependency>
+                			<groupId>org.springframework.cloud</groupId>
+                			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+                		</dependency>
+
+    2. 配置application.yml
+        spring:
+          application:
+            name: eureka-feign-client
+        server:
+          port: 8765
+
+        eureka:
+          client:
+            serviceUrl:
+              defaultZone: http://localhost:8761/eureka/
+
+        # Feign 的起步依赖中已经包含Hystrix依赖，所以只要在配置文件中开启Hystrix的功能就可以
+        feign:
+          hystrix:
+            enabled: true
+
+    3. 在EurekaFeignClientApplication上增加@EnableEurekaClient开启 Eureka Client的功能,增加@EnableFeignClients开启FeignClient功能，
+        增加@EnableHystrix功能开启Hystrix熔断器功能，增加@EnableHystrixDashboard注解开启Hystrix Dashboard功能。
+
+    4. 新建一个FeignConfig类， 见代码com.forezp.client.config.FeignConfig.java。
+        在FeignConfig 类加上＠Configuration 注解，表明该类是一个配置类，并注入一个BeanName为feignRetryer 的Retryer的Bean 。
+        注入该Bean 之后， Feign 在远程调用失败后会进行重试。
+
+    5. 新建一个EurekaClientFeign接口，见代码com.forezp.client.EurekaClientFeign.java。
+            在接口上加＠FeignClient 注解来声明一个Feign Client,其中value 为远程调用其他服务的服务名， configuration =FeignConfig.class 为FeignClient 的配置类。
+            在EurekaClientFeign 接口内部有一个sayHiFromClientEureka（）方法，该方法通过Feign 来调用eureka-client 服务的“/hi”的API 接口.
+
+    6.  新建一个HiHystrix类， 见代码com.forezp.client.hystrix.HiHystrix.java。
+            此类必须实现EurekaClientFeign接口中的方法,必须在类上加上@Component注解，将此对象注入到IOC容器中。
+
+    7. 在EurekaClientFeign接口的＠FeignClient的fallback配置快速失败的处理类HiHystrix.class。
+
+    8. 新建一个HiService类，见代码com.forezp.service.HiService.java。
+        Hi Service 类注入EurekaClientFeign 的Bean ，通过EurekaClientFeign 去调用sayHiFromClientEureka（）方法。
+
+    9. 新建一个HiController类，见代码com.forezp.web.HiController.java。
+        在Hi Controller 上加上＠RestController 注解，开启RestController 的功能，写一个API 接口“/hi”，
+        在该接口调用了Hi Service 的sayHi （）方法。HiService 通过EurekaClientFeign 远程调用eureka-cl ient 服务的API 接口"/hi"
+
+    10.  启动eureka-server功能，端口为8761。启动1个eureka-client示例，端口为8762。
+        (如果已经启动，请忽略。eureka-client启动示例方法见 eureka-client/总结.txt 中的说明)
+
+    11. 启动eureka-feign-client服务后，在浏览器上访问http://localhost:8765/hi
+        浏览器会显示如下内容：
+            hi forezp,i am from port : 8762
+
+    12. 新建一个com.forezp.servlet.HystrixStreamServlet.java类，加上@Component注解将对象注入IOC容易中，在此类中注入一个HystrixMetricsStreamServlet 的Bean。
+
+    13. 浏览器访问http://localhost:8765/hystrix.stream 地址：  (spring boot 2.0 Hystrix Dashboard需要注入步骤7中的HystrixMetricsStreamServlet)，否则http://localhost:8765/hystrix.stream报404错误
+        返回 ping:
+             ping:
+        或者 data:
+             ping:
+        代表访问成功。
+
+    14. 浏览器访问http://localhost:8765/hystrix 地址:
+        在Hystrix DashBoard 输入框中输入： http://localhost:8765/hystrix.stream 地址
+        在Title中输入：  forezp
+        点击  Monitor Stream 按钮
+
+        显示eureka-ribbon-client的Hystrix Dashboard 数据。 具体介绍见： https://github.com/Netflix/Hystrix 官方文档
+
+
+

@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    status-page-url-path: /actuator/info #信息查询的url link
+    health-check-url-path: /actuator/health #健康检查的url
+    hostname: localhost
+  # Eureka Server必须禁止向自己注册 必须将eureka.client.register-with-eureka和eureka.client.fetch-registry 设置为false
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+
+
+

@@ -1,0 +1,18 @@
+#有两个不同Uri 地址（例如example.com 和google.com ）的服务实例，通过stores.ribbon.listOfServers 来配置这些服务实例的Uri
+stores:
+  ribbon:
+    listOfServers: example.com,google.com
+
+# 设置通过eureka获取服务注册列表功能  关闭
+ribbon:
+  eureka:
+   enabled: false
+
+# 关闭eureka的自我注册功能
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+server:
+  port: 8769

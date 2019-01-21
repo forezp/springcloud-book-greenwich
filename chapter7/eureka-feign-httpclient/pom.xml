@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.forezp</groupId>
+	<artifactId>eureka-feign-httpclient</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>eurka-feign-httpclient</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<parent>
+		<groupId>com.forezp</groupId>
+		<artifactId>chapter5-2</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
+		<!-- porn 文件加上apache-httpclient 的依赖， Feign 就会采用HttpClient 作为网络请求 框架，而不是默认的HttpURLConnection
+		-->
+
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-httpclient</artifactId>
+			<version>9.4.0</version>
+		</dependency>
+
+
+		<!-- 同理，如果想要Feign 中使用Okhttp作为网络请求框架，则只需要在porn 文件上加上feign-okhttp 的依赖 feign-httpclient和feign-okhttp只要 使用一种
+		<dependency>
+  			<groupId>com.netflix.feign</groupId>
+  			<artifactId>feign-okhttp</artifactId>
+  			<version>8.18.0</version>
+		</dependency>
+		-->
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

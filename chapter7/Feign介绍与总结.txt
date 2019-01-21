@@ -1,0 +1,84 @@
+1. Feign基本简介：
+
+    Feign 受Retrofit、JAXRS-2.0 和Web Socket 的影响， 采用了声明式API 接口的风格， 将Java Http 客户端绑定到它的内部。
+    Feign 的首要目标是将Java Http客户端调用过程变得简单。 Feign 的源码地址：https://github.com/OpenFeign/feign。
+
+2. 本章重点：
+    1. 如何使用Feign来远程调度其他服务
+    2. FeignClient的各项详细配置
+    3. 源码讲解Feign
+
+3. FeignClient详解：
+    为了深入理f晖Feign ， 下面将从源码的角度来讲解Feign 。首先来查看FeignClient 注解
+    @FeignClient 的源码， 其代码如下：
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
+    @Documented
+    public e 工nterface FeignClient {
+    @AliasFor("name")
+    String value() default "";
+    @AliasFor ("value")
+    String name() default "";
+    @AliasFor ("value")
+    String name() default "";
+    String url() default "";
+    boolean decode404() default false;
+    Class<?>[] configuration() default { };
+    Class<?> fallback () default void.class ;
+    Class<?> fallbackFactory() default void.class ;
+    String path() default "";
+    boolean primary() default true ;
+    FeignClient 注解被@Target(ElementType.TYPE）修饰，表示FeignClient 注解的作用目标在接口上。
+    ＠Retention(RetentionPolicy.RUNTIME）注解表明该注解会在Class 字节码文件中存在，在运行时可以通过反射获取到。
+    ＠Documented 表示该注解将被包含在Javadoc 中。
+
+    @Feign Client 注解用于创建声明式API 接口，该接口是阻STful 风格的。Feign 被设计成插拔式的，可以注入其他组件和Feign 一起使用。
+    最典型的是如果Ribbon 可用， Feign 会和 Ribbon 相结合进行负载均衡。
+
+    在代码中， value（）和name（）一样，是被调用的服务的ServiceId 。
+    url （）直接填写硬编码Uri 地址。decode404（）即404 是被解码，还是抛异常。
+    configuration （）指明FeignClient 的配置类，默认的配置类为FeignClientsConfiguration 类，
+    在缺省的情况下， 这个类注入了默认的Decoder 、 Encoder 和Contract 等配置的Bean 。fallback（）为配置熔断器的处理类。
+
+4. FeignClient的配置
+    Feign Client 默认的配置类为FeignClientsConfiguration ， 这个类在spring-cloud-openfeign-core的jar 包下。
+    打开这个类，可以发现这个类注入了很多Feign 相关的配置Bean ，包括FeignRetryer 、F eignLoggerF actory 和FormattingConversionService 等。
+    另外， Decoder 、Encoder 和Contract这3 个类在没有Bean 被注入的情况下，会自动注入默认配置的Bean ，即ResponseEntity Decoder 、SpringEncoder 和SpringMvcContract。默认注入的配置如下。
+    口Decoder feignDecoder: ResponseEntityDecoder。
+    口Encoder feignEncoder: SpringEncoder 。
+    口Logger feignLogger: Slf4jLogger 。
+    口Contract feignContract: SpringMvcContract 。
+    口Feign.Builder feignBuilder: HystrixFeign.Builder 。
+    FeignClientsConfiguration 的配置类部分代码如下， ＠ConditionalOnMissingBean 注解表示如果没有注入该类的Bean 就会默认注入一个Bean 。
+
+    重写FeignClientsConfiguration 类中的Bean ， 覆盖掉默认的配置Bean ，从而达到自定义配置的目的。例如Feign 默认的配置在请求失败后， 重试次数为0 ，
+    即不重试（ Retry er.NEVER_RETRY ）。现在希望在请求失败后能够重试，这时需要写一个配置FeignConfig 类，在该类中注入Retryer的Bean ，
+    覆盖掉默认的Retryer的Bean ， 并将FeignConfig 指定为FeignClient 的配置类。
+
+    FeignConfiguration定义见示例： com.forezp.client.config.FeignConfiguration.java
+    FeignConfiguration应用见示例： com.forezp.client.EurekaClientFeign.java  @FeignClient注解的configuration属性
+
+
+5. Feign 是一个伪Java Http 客户端， Feign 不做任何的请求处理。Feign 通过处理注解生成Request 模板，从而简化了Http API 的开发。
+   开发人员可以使用注解的方式定制Request API模板。在发送HttpRequest 请求之前， Feign 通过处理注解的方式替换掉Request 模板中的参数，
+   生成真正的Request ，并交给Java Http 客户端去处理。利用这种方式，开发者只需要关注Feign注解模板的开发，而不用关注Http 请求本身，
+   简化了Http 请求的过程，使得Http请求变得简单和容易理解。
+
+   Feign 通过包扫描注入FeignClient 的Bean ，该源码在FeignClientsRegistrar 类中。首先在程序启动时，会检查是否有＠EnableFeignClients 注解，
+   如果有该注解，则开启包扫描，扫描被＠FeignClient 注解的接口。
+
+   详细源码介绍见  <深入理解Spring Cloud与微服务架构> 第7章的7.4章节 P124-P127 。
+
+8. Feign如何实现负载均衡的：
+    FeignRibbonClientAutoConfiguration 类配置了Client 的类型（包括HttpURLConnection 、OkHIttp 和HttpClient ），
+    最终向容器注入的是Client 的实现类LoadBalancerFeignClient ，即负载均衡客户端。
+
+7.  Feign流程总结：
+      总的来说， Feign 的源码实现过程如下：
+      ( 1) 首先通过@EnableFeignClients 注解开启Feign Client 的功能。只有这个注解存在，才会在程序启动时开启对＠FeignClient 注解的包扫描。
+      (2 ）根据Feign 的规则实现接口，井在接口上面加上＠FeignClient 注解。
+      (3 ）程序启动后，会进行包扫描，扫描所有的＠ FeignClient 的注解的类，并将这些信息注入IoC 容器中。
+      ( 4 ）当接口的方法被调用时， 通过JDK 的代理来生成具体的RequestTemplate 棋根对象。
+      ( 5 ）根据RequestTemplate 再生成Http 请求的Request 对象。
+      ( 6 ) Request 对象交给Client 去处理， 其中Client 的网络请求框架可以是HttpURLConnection 、HttpClient 和OkHttp 。
+      (7 ）最后Client 被封装到LoadBal a nceC li e n t 类，这个类结合类Ribbon 做到了负载均衡。

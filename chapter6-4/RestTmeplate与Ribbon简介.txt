@@ -1,0 +1,38 @@
+1. RestTemplate简介：
+
+    RestTemplate 是Spring Resources 中一个访问第三方阻ST削API 接口的网络请求框架。
+    RestTemplate 的设计原则和其他Spring Template （例如JdbcTemplate 、JmsTemplate ）类似，都是为执行复杂任务提供了一个具有默认行为的简单方法。
+    RestTemplate 是用来消费REST 服务的，所以RestTemplate 的主要方法都与REST 的H即协议的一些方法紧密相连，例如HEAD 、GET 、POST 、PUT 、DELETE 和OPTIONS 等方法，
+    这些方法在RestTemplate 类对应的方法为headF or Headers （）、getForObject（） 、postForObject （） 、put（）和delete （） 等。
+
+    RestTemplate 支持常见的Http 协议的请求方法，例如Post 、Put 、Delete 等，所以用RestTemplate 很容易构建阻STful API。
+    RestTemplate 的使用很简单，它支持Xml 、JSON数据格式，默认实现了序列化，可以自动将JOSN 字符串转换为实体。
+
+2. Ribbon简介：
+
+    负载均衡是指将负载分摊到多个执行单元上，常见的负载均衡有两种方式。一种是独立进程单元，通过负载均衡策略，将请求转发到不同的执行单元上，例如Ngnix 。另一种是将负载
+    均衡逻辑以代码的形式封装到服务消费者的客户端上，服务消费者客户端维护了一份服务提供者的信息列表，有了信息列表，通过负载均衡策略将请求分摊给多个服务提供者，从而达到负
+    载均衡的目的。
+
+    Ribbon 是Netflix 公司开源的一个负载均衡的组件，它属于上述的第二种方式，是将负载均衡逻辑封装在客户端中，并且运行在客户端的进程里。Ribbon 是一个经过了云端测试的IPC
+    库，司以很好地控制HTTP 和TCP 客户端的负载均衡行为。
+    在Spring Cloud 构建的微服务系统中， Ribbon 作为服务消费者的负载均衡器，有两种使用方式， 一种是和RestTemplate 相结合，另一种是和Feign 相结合。Feign 已经默认集成了Ribbon,关于Feign 的内容将会在下一章进行详细讲解。
+
+    Ribbon 有很多子模块，但很多模块没有用于生产环境，目前Netflix 公司用于生产环境的Ribbon子模块如下。
+
+        口 Ribbon-loadbalancer：可以独立使用或与其他模块一起使用的负载均衡器API 。
+        口 Ribbon-eureka ：阳bbon 结合Eureka 客户端的API ，为负载均衡器提供动态服务注册列表信息。
+        口 Ribbon-core: Ribbon 的核心API 。
+
+
+3. 为什么在RestTemplate 类的Bean 上加一个@LoadBalance 注解就可以使用Ribbon 的负载均衡呢？【重点】【重点】【重点】
+
+    Ribbon 的负载均衡主要是通过LoadBalancerClient 来实现的，而LoadBalancerClient具体交给了ILoadBalancer 来处理，
+    ILoadBalancer 通过配置!Rule、!Ping 等，向EurekaClient获取注册列表的信息，默认每10 秒向EurekaClient 发送一次“ping ”， 进而检查是否需要更新
+    服务的注册列表信息。最后，在得到服务注册列表信息后， ILoadBalancer 根据IRule 的策略进行负载均衡。
+
+    而RestTemplate 加上＠LoadBalance 注解后，在远程调度时能够负载均衡， 主要是维护了一个被＠LoadBalance 注解的RestTemplate 列表，
+    并给该列表中的RestTemplate 对象添加了拦截器。在拦截器的方法中，将远程调度方法交给了Ribbon 的负载均衡器LoadBalancerClient
+    去处理，从而达到了负载均衡的目的。
+	
+4. Ribbon源码介绍 请见 <深入理解Spring Cloud与微服务架构> 第6章的6.5章节 P107-P117 。

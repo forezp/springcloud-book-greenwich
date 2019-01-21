@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: eureka-feign-client
+server:
+  port: 8765
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# Feign 的起步依赖中已经包含Hystrix依赖，所以只要在配置文件中开启Hystrix的功能就可以
+feign:
+  hystrix:
+    enabled: true
+

@@ -1,0 +1,33 @@
+#定义了两个profile 文件，分别为peerl 和peer2 ，它们的hostname 分别为peerl
+#和peer2 。在实际开发中，可能是具体的服务器F 地址，它们的端口分别为8761 和8762
+#因为是在本地搭建Eureka Server 集群，所以需要修改本地的host文件，windows系统的电脑
+#在C:\Windows\System32\drivers\etc\hosts 中修改
+# 127.0.0.1 peer1
+# 127.0.0.1 peer2
+---
+spring:
+   profiles: peer1
+server:
+   port: 8761
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    service-url:
+      defaultZone: http://peer2:8762/eureka/ # 注意： peer1要连接peer2的eureka地址
+  server:
+      peer-node-read-timeout-ms: 2000
+---
+spring:
+   profiles: peer2
+server:
+   port: 8762
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/ # 注意： peer2要连接peer1的eureka地址
+  server:
+    peer-node-read-timeout-ms: 2000
+

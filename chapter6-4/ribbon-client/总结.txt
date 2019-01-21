@@ -1,0 +1,56 @@
+Ribbon Client Module用于演示
+    通过配置ribbon.eureka.enable 为false来禁止调用Eureka Client 获取注册列表,从配置的指定服务示例列表中获取服务。
+
+一： 编写Ribbon Client:
+
+    1.在POM文件中引入依赖：
+        <dependency>
+        			<groupId>org.springframework.cloud</groupId>
+        			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        		</dependency>
+
+        		<dependency>
+        			<groupId>org.springframework.boot</groupId>
+        			<artifactId>spring-boot-starter-test</artifactId>
+        			<scope>test</scope>
+        		</dependency>
+
+        		<dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </dependency>
+
+        		<dependency>
+        			<groupId>org.springframework.boot</groupId>
+        			<artifactId>spring-boot-starter-actuator</artifactId>
+                </dependency>
+
+    2. 配置application.yml
+        #有两个不同Uri 地址（例如example.com 和google.com ）的服务实例，通过stores.ribbon.listOfServers 来配置这些服务实例的Uri
+        stores:
+          ribbon:
+            listOfServers: example.com,google.com
+
+        # 设置通过eureka获取服务注册列表功能  关闭
+        ribbon:
+          eureka:
+           enabled: false
+
+        # 关闭eureka的自我注册功能
+        eureka:
+          client:
+            registerWithEureka: false
+            fetchRegistry: false
+
+        server:
+          port: 8769
+
+    4. 新建一个RestController类，创建一个API 接口“／testRibbon ”。在RestController 类注入 LoadBalancerClient，通过LoadBalancerClient 的choose("stores")方法获取服务实例的信息。
+
+    5. 启动服务后，在浏览器上访问http://localhost:8769/testRibbon， 浏览器显示如下信息：
+        example.com:80
+        google.com:80
+
+    现在我们可以知道，在Ribbon 中的负载均衡客户端为LoadBalancerClient 。在Spring Cloud项目中，负载均衡器Ribbon 会默认从Eureka Client 的服务注册列表中获取服务的信息，
+    并缓存一份。根据缓存的服务注册列表信息，可以通过LoadBalancerClient 来选择不同的服务实例， 从而实现负载均衡。如果禁止Ribbon 从Eureka 获取注册列表信息，则需要自己去维护一份服
+    务注册列表信息。根据自己维护服务注册列表的信息， Ribbon 也可以实现负载均衡。

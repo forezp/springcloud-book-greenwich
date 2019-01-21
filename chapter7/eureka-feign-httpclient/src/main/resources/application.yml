@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: eureka-feign-httpclient
+server:
+  port: 8767
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# 如何不想feign 使用默认的HttpURLConnection 使用httpclient 需要设置下面的属性
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    enabled: true
+  okhttp:
+    enabled: false
+
+logging: ## Spring Cloud Gateway的日志配置
+  level:
+    com.forezp.client.EurekaClientFeign: DEBUG
+  config: classpath:logback.xml
+
+

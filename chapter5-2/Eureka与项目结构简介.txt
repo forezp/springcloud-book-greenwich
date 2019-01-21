@@ -1,0 +1,55 @@
+1. 什么是Eureka?
+    Eureka是Netflix 在线影片公司开源的一个服务注册与发现的组件，和其他Netflix 公司的服务组件（例如负载均衡、熔断器、网关等） 一起，被Spring Cloud 社区整合为Spring Cloud Netflix 模块。
+    和Consul 、Zookeeper 类似， Eureka 是一个用于服务注册和发现的组件， 最开始主要应用于亚马逊公司旗下的云计算服务平台AWS。Eureka 分为Eureka Server 和Eureka Client, Eureka
+    Server 为Eureka 服务注册中心， Eureka Client 为Eureka 客户端。
+
+2. 为什么选择Eureka?
+    在Spring Cloud 中，可选择Consul 、Zookeeper 和Eureka 作为服务注册和发现的组件，那为什么要选择Eureka 呢？
+
+    首先Eureka 完全开源，是Netflix 公司的开源产品， 经历了Netflix 公司的生产环境的考验，以及3 年时间的不断法代，在功能和性能上都非常稳定，可以放心使用。
+    其次， Eureka 是Spring Cloud 首选推荐的服务注册与发现组件， 与Spring Cloud 其他组件可以无缝对接。
+    最后， Eureka 和其他组件，比如负载均衡组件Ribbon 、熔断器组件Hys往以、熔断器监控组件Hystrix Dashboard 组件、熔断器聚合监控Turbine 组件，以及网关Zuul 组件相互配合， 能够
+    很容易实现服务注册、负载均衡、熔断和智能路由等功能。这些组件都是由Netflix 公司开源的，一起被称为Netflix OSS 组件。Netflix OSS 组件由Spring Cloud 整合为Spring Cloud Netflix 组件，
+    它是Spring Cloud 构架微服务的核心组件，也是基础组件。
+
+3. Eureka 的基本架构:
+    Eureka 的基本架构其中主要包括以下3 种角色。
+            口Register Service ：服务注册中心，它是一个Eureka Server ，提供服务注册和发现的功能。
+            口Provider Service ：服务提供者，它是一个Eureka Client ，提供服务。
+            口Consumer Service ：服务消费者，它是一个Eureka Cient ，消费服务。
+    服务消费的基本过程如下：首先前要一个服务注册中心Eureka Server ，服务提供者EurekaClient 向服务注册中心Eureka Server 注册，将自己的信息（比如服务名和服务的IP 地址等）
+    通过阻ST A 凹的形式提交给服务注册中心Eureka Server 。同样，服务消费者Eureka Client 也向服务注册中心Eureka Server 注册，同时服务消费者获取一份服务注册列表的信息， 该列表
+    包含了所有向脱务注册中心Eureka Server 注册的服务信息。获取服务注册列表信息之后，服务消费者就知道服务提供者的IP 地址，可以通过HTTP远程调度来消费服务提供者的服务。
+
+4. 本案例说明：
+    1. 由于本案例有多个Spring Boot 工程，为了方便管理，采用Maven 多Module 的结构，所以需要创建一个Maven 主工程。需要说明的是，本书中所有的案例都采用这种Maven 多Module的结构。
+        chapter5-2
+            eureka-client
+            eureka-server
+            pom.xml
+        在根pom.xml文件中 引入eureka-client 和eureka-server两个Module 工程共同所需的依赖。
+
+        <parent>
+        		<groupId>org.springframework.boot</groupId>
+        		<artifactId>spring-boot-starter-parent</artifactId>
+        		<version>2.0.5.RELEASE</version>
+        </parent>
+
+        <properties>
+        		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        		<java.version>1.8</java.version>
+        		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        </properties>
+
+        <dependencyManagement>
+        		<dependencies>
+        			<dependency>
+        				<groupId>org.springframework.cloud</groupId>
+        				<artifactId>spring-cloud-dependencies</artifactId>
+        				<version>${spring-cloud.version}</version>
+        				<type>pom</type>
+        				<scope>import</scope>
+        			</dependency>
+        		</dependencies>
+        	</dependencyManagement>

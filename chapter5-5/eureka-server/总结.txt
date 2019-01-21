@@ -1,0 +1,69 @@
+编写Eureka Server集群:
+
+    1.在POM文件中引入依赖：
+        <dependency>
+        			<groupId>org.springframework.cloud</groupId>
+        			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        		</dependency>
+
+        		<dependency>
+        			<groupId>org.springframework.boot</groupId>
+        			<artifactId>spring-boot-starter-test</artifactId>
+        			<scope>test</scope>
+        		</dependency>
+
+        		<dependency>
+        			<groupId>org.springframework.boot</groupId>
+        			<artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+    2. 配置application.yml
+
+        ---
+        spring:
+           profiles: peer1
+        server:
+           port: 8761
+        eureka:
+          instance:
+            hostname: peer1
+          client:
+            service-url:
+              defaultZone: http://peer2:8762/eureka/  # 注意： peer1要连接peer2的eureka地址
+          server:
+              peer-node-read-timeout-ms: 2000
+        ---
+        spring:
+           profiles: peer2
+        server:
+           port: 8762
+        eureka:
+          instance:
+            hostname: peer2
+          client:
+            service-url:
+              defaultZone: http://peer1:8761/eureka/ # 注意： peer2要连接peer1的eureka地址
+          server:
+            peer-node-read-timeout-ms: 2000
+
+    3.  在EurekaServerApplication上增加@EnableEurekaServer开启 Eureka Server功能。
+
+    4.  在C:\Windows\System32\drivers\etc\hosts增加如下设置：
+        127.0.0.1 peer1
+        127.0.0.1 peer2
+
+    5. 在eureka-server项目中运行，mvn clean package命令打包此项目。
+
+    6. cmd进入eureka-server/target目录，运行 java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1 命令，
+        在命令行中看到：Started Eureka Server 意味着eureka-server启动成功。
+
+    7. cmd进入eureka-server/target目录，运行 java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2 命令，
+               在命令行中看到：Started Eureka Server 意味着eureka-server启动成功。
+
+    8. 浏览器访问http://peer1:8761/ 在DS Replicas 可以看到 peer2。
+
+    9. 浏览器访问 http://peer2:8762/  在DS Replicas 可以看到 peer1。 代表Eureka server集群搭建成功。
+
+    10. 启动eureka-client服务，http://peer1:8761/ 或 http://peer2:8762/
+        主页上的Instances currently registered with Eureka 选项中都己经有一个实例被注册， Application 为EUREKA-CLIENT, Staus 为UPC 在线） ， 端口为8763 。
+

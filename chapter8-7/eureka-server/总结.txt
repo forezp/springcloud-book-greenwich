@@ -1,0 +1,45 @@
+编写Eureka Server:
+
+    1.在POM文件中引入依赖：
+        <dependency>
+        			<groupId>org.springframework.cloud</groupId>
+        			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        		</dependency>
+
+        		<dependency>
+        			<groupId>org.springframework.boot</groupId>
+        			<artifactId>spring-boot-starter-test</artifactId>
+        			<scope>test</scope>
+        		</dependency>
+
+        		<dependency>
+        			<groupId>org.springframework.boot</groupId>
+        			<artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+    2. 配置application.yml
+        spring:
+          application:
+            name: eureka-server
+
+        server:
+          port: 8761
+
+        eureka:
+          instance:
+            prefer-ip-address: true
+            status-page-url-path: /actuator/info #信息查询的url link
+            health-check-url-path: /actuator/health #健康检查的url
+            hostname: localhost
+          client:
+             # Eureka Server必须禁止向自己注册 必须将eureka.client.register-with-eureka和eureka.client.fetch-registry 设置为false
+            register-with-eureka: false
+            fetch-registry: false
+            service-url:
+              defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+    3.  在EurekaServerApplication上增加@EnableEurekaServer开启 Eureka Server功能。
+
+    4. 启动服务后，在浏览器上访问Eureka Server主界面： http://localhost:8761/
+       在界面上的Instances currently registered with Eureka 这一项上没有任何注册的实例，
+       没有是正常的，因为还没有Eureka Client 客户端向注册中心Eureka Server 注册实例。

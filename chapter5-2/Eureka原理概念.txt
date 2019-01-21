@@ -1,0 +1,67 @@
+Eureka的一些概念:
+
+一 基本概念：
+
+    (1) Register： 服务注册
+            当Eureka Client 向Eureka Server 注册时， Eureka Client 提供自身的元数据，比如IP 地址、端口、运行状况H1 标的Uri 、主页地址等信息。
+
+            (源码见eureka-client-1.9.2.jar com.netflix.discovery.DiscoveryClient.java)
+            该类包含了Eureka Client 向Eureka Server 注册的相关方法。其中， DiscoveryClient 实现了EurekaClient 接口， 并且它是一个单例模式，
+            而EurekaClient 继承了LookupService 接口。在DiscoveryClient 类中有一个服务注册的方法register()，该方法通过Http 请求向EurekaServer 注册。
+
+    (2) Renew： 服务续约
+        Eureka Client 在默认的情况下会每隔30 秒发送一次心跳来进行服务续约。通过服务续约来告知Eureka Server该Eureka Client 仍然可用，没有出现故障。
+        正常情况下，如果Eureka Server在90 秒内没有收到Eureka Client 的心跳， Eureka Server 会将Eureka Client 实例从注册列表中删除。
+        注意：官方建议不要更改服务续约的间隔时间。
+    (3) Fetch Registries： 获取服务注册列表信息
+        Eureka Client 从Eureka Server 获取服务注册表信息，井将其缓存在本地。Eureka Client 会使用服务注册列表信息查找其他服务的信息，从而进行远程调用。该注册列表信息定时（每
+        30 秒） 更新一次，每次返回注册列表信息可能与Eureka Client 的缓存信息不同， Eureka Client会自己处理这些信息。如呆由于某种原因导致注册列表信息不能及时匹配， Eureka Client 会重
+        新获取整个注册表信息。Eureka Server 缓存了所有的服务注册列表信息，并将整个注册列表以及每个应用程序的信息进行了压缩，压缩内容和没有压缩的内容完全相同。Eureka Client 和
+        Eureka Server 可以使用JSON 和XML 数据格式进行通信。在默认的情况下， Eureka Client 使用JSON 格式的方式来获取服务注册列表的信息。
+
+    (4) Cancel: 服务下线
+        Eureka Client 在程序关闭时可以向Eureka Server 发送下线请求。发送请求后，该客户端的实例信息将从Eureka Server 的服务注册列表中删除。该下线请求不会自动完成，需要在程序
+        关闭时调用以下代码：DiscoveryManager.getinstance().shutdownComponent();
+
+    (5) Eviction: 服务剔除
+        在默认情况下，当Eureka Client 连续90 秒没有向Eureka Server 发送服务续约（即心跳〉    时， Eureka Server 会将该服务实例从服务注册列表删除，即服务剔除。
+
+    (6) 每个概念对应的源码请仔细阅读 <深入理解Spring Cloud与微服务构建> pdf P90，5.4章节 源码解析Eureka。
+
+二 为什么Eureka Client获取服务示例慢？
+    ( 1 ) Eureka Client 的注册延迟
+        Eureka Client 启动之后，不是立即向Eureka Server 注册的，而是有一个延迟向服务端注册的时间。通过跟踪源码，可以发现默认的延迟时间为40 秒。
+    ( 2 ) Eureka Server 的响应缓存
+        Eureka Server 维护每30 秒更新一次响应缓存，可通过更改配置e ureka.ser飞1er.responseCacheUpdatelnterva!Ms 来修改。所以即使是刚刚注册的实例，也不会立即出现在服务注册列表中。
+    ( 3 ) Eureka Client 的缓存
+        Eureka Client 保留注册表信息的缓存。该缓存每30 秒更新一次（如前所述）。因此， Eureka Client刷新本地缓存并发现其他新注册的实例可能需要30 秒。
+    ( 4) LoadBalancer 的缓存
+        Ribbon 的负载平衡器从本地的Eureka Client 获取服务注册列表信息。Ribbon 本身还维护了缓存，以避免每个请求都需要从Eureka Cli阳1t 获取服务注册列表。此缓存每3 0 秒刷新一次
+        （可由ribbon.ServerListRe企eshlnterval 配置） ，所以可能至少需要3 0 秒的时间才能使用新注册的实例。
+
+    综上因素，一个新注册的实例，默认延迟40 秒向服务注册中心注册，所以不能马上被Eureka Server 发现。另外，刚注册的Eureka Client 也不能立即被其他服务调用，原因是调用方由于各种
+    缓存没有及时获取到最新的服务注册列表信息。
+
+三 Eureka 的高可用架构
+    Eureka 的高可用架构图 见Eureka 开源代码的文档，地址为https ://github.cornft也tflix/eureka/wiki/Eureka-at-a-glance 。
+
+    架构中有两个角色，即Eureka Server 和Eureka Client 。而EurekaClient 又分为Applicaton Service 和Application Client ， 即服务提供者和服务消费者。
+    每个区域有一个Eureka 集群， 并且每个区域至少有一个Eureka Server 可以处理区域故障， 以防服务器瘫痪。
+
+    Eureka Client 向Eureka Server 注册， 将自己的客户端信息提交给Eureka Server 。然后，Eureka Client 通过向Eureka Server 发送心跳（每30 秒一次）来续约服务。
+    如果某个客户端不能持续续约，那么Eureka Server 断定该客户端不可用， 该不可用的客户端将在大约90 秒后从Eureka Serve 服务注册列表中删除。
+
+    服务注册列表信息和服务续约信息会被复制到集群中的每个Eureka Serve 节点。来自任何区域的Eureka Client 都可以获取整个系统的服务注册列表信息。
+    根据这些注册列表信息， Application Client 可以远程调用Applicaton Service 来消费服务。
+
+四 Eureka的自我保护模式
+
+    当有一个新的Eureka Se凹er 出现时，它尝试从相邻Peer 节点获取所有服务实例注册表信息。如果从相邻的Peer 节点获取信息时出现了故障， Eureka Server 会尝试其他的Peer 节点。
+    如果Eureka Serve 能够成功获取所有的服务实例信息，则根据配置信息设置服务续约的阀值。在任何时间，如果Eureka Serve 接收到的服务续约低于为该值配置的百分比（默认为15 分钟
+    内低于85% ），则服务器开启自我保护模式，即不再剔除注册列表的信息。
+    这样做的好处在于，如果是Eureka Server 自身的网络问题而导致E ureka Cli阳it 无法续约，Eureka Client 的注册列表信息不再被删除，也就是Eureka Client 还可以被其他服务消费。
+    在默认情况下， Eureka Server 的自我保护模式是开启的，如果雨要关闭，则在阳直文件添加以下代码：
+    eureka:
+        server:
+            enable-self-preservation: : false
+

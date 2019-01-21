@@ -1,0 +1,135 @@
+
+一： 编写Eureka Feign with Httpclient:
+
+    1.在POM文件中引入依赖：
+                <dependencies>
+
+                    <dependency>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-starter-openfeign</artifactId>
+                    </dependency>
+
+                    <!-- porn 文件加上apache-httpclient 的依赖， Feign 就会采用HttpClient 作为网络请求 框架，而不是默认的HttpURLConnection
+                    -->
+                    <dependency>
+                        <groupId>io.github.openfeign</groupId>
+                        <artifactId>feign-httpclient</artifactId>
+                        <version>9.4.0</version>
+                    </dependency>
+
+
+                    <!-- 同理，如果想要Feign 中使用Okhttp作为网络请求框架，则只需要在porn 文件上加上feign-okhttp 的依赖 feign-httpclient和feign-okhttp只要 使用一种
+                    <dependency>
+                        <groupId>com.netflix.feign</groupId>
+                        <artifactId>feign-okhttp</artifactId>
+                        <version>8.18.0</version>
+                    </dependency>
+                    -->
+
+                    <dependency>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                    </dependency>
+
+                    <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-web</artifactId>
+                    </dependency>
+
+                    <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-test</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+
+                    <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-actuator</artifactId>
+                    </dependency>
+
+
+                </dependencies>
+
+    2. 配置application.yml
+        spring:
+          application:
+            name: eureka-feign-httpclient
+        server:
+          port: 8767
+
+        eureka:
+          client:
+            serviceUrl:
+              defaultZone: http://localhost:8761/eureka/
+
+        # 如果不想feign 使用默认的HttpURLConnection 使用httpclient 需要设置下面的属性
+        feign:
+          hystrix:
+            enabled: true
+          httpclient:
+            enabled: true
+          okhttp:
+            enabled: false
+
+        logging: ## spring cloud 的日志配置
+          level:
+            com.forezp.client.EurekaClientFeign: DEBUG  # 这个必须写feignClient的全路径和类名
+          config: classpath:logback.xml # 指定logback.xml 配置文件  更多的配置示例请百度查询
+
+    3. 为输出Feign的日志，新建一个com.forezp.logging.FeignClientConfig类。加上@Configuration注解，标识此类为配置类，注入一个feignLoggerLevel Bean，指定日志级别为FULL。
+       有此步骤再配上application.yml中
+            logging: ## spring cloud 的日志配置
+                      level:
+                        com.forezp.client.EurekaClientFeign: DEBUG  # 这个必须写feignClient的全路径和类名
+       才能输出Feign的日志。
+
+    4. 在EurekaFeignHttpclientApplication上增加@EnableEurekaClient开启 Eureka Client的功能,增加@EnableFeignClients开启FeignClient功能。
+
+    5. 新建一个FeignConfig类， 见代码com.forezp.client.config.FeignConfig.java。
+        在FeignConfig 类加上＠Configuration 注解，表明该类是一个配置类，并注入一个BeanName为feignRetryer 的Retryer的Bean 。
+        注入该Bean 之后， Feign 在远程调用失败后会进行重试。
+
+    6. 新建一个EurekaClientFeign类，见代码com.forezp.client.EurekaClientFeign.java。
+            在接口上加＠FeignClient 注解来声明一个Feign Client,其中value 为远程调用其他服务的服务名， FeignConfig.class 为Feign Client 的配置类。
+            在EurekaClientFeign 接口内部有一个sayHiFromClientEureka（）方法，该方法通过Feign 来调用eureka-client 服务的“/hi”的API 接口
+
+    7. 新建一个HiService类，见代码com.forezp.service.HiService.java。
+        Hi Service 类注入EurekaClientFeign 的Bean ，通过EurekaClientF eign 去调用sayHiFromClientEureka（）方法。
+
+    8. 新建一个HiController类，见代码com.forezp.web.HiController.java。
+        在Hi Controller 上加上＠RestController 注解，开启RestController 的功能，写一个API 接口“/hi”，
+        在该接口调用了Hi Service 的sayHi （）方法。HiService 通过EurekaClientFeign 远程调用eureka-cl ient 服务的API 接口"/hi"
+
+    9. 在httpclient中使用线程池优化http请求性能
+        新建com.forezp.httpclient.HttpPool类， ＠Configuration 注解，表明该类是一个配置类。注入一个httpClient() Bean，对httpclient一系列连接参数进行设置，并且使用timer进行超时和限制连接的处理。
+
+    10.  启动eureka-server功能，端口为8761。启动两个eureka-client示例，端口分别为8762,8763。
+        (如果已经启动，请忽略。eureka-client不同端口启动示例方法见 eureka-client/总结.txt 中的说明)
+
+    11. 启动eureka-feign-client服务后，在浏览器上访问http://localhost:8767/hi
+        浏览器会 轮流 显示如下内容：
+            hi chenyan,i am from port : 8763
+            hi chenyan , i am from port : 8762
+
+        由此可见， Feign Client 远程调用了eureka-client 服务（存在端口为8 762 和8763 的两个实例）的“/hi” API 接口， Feign Client 有负载均衡的能力。
+        查看起步依赖spring-cloud-starter-openfeign的pom 文件，可以看到该起步依赖默认引入了Ribbon 和Hystrix 的依赖，即负载均衡和熔断器的依赖。
+
+
+
+二. 怎么确定httpclient已经应用到项目中？
+
+    方法1：调试源码
+        在HttpClientFeignLoadBalancedConfiguration类的connectionManager方法中设置断点1， 在DefaultFeignLoadBalancedConfiguration类的feignClient方法中设置断点2。
+        如果断点进入HttpClientFeignLoadBalancedConfiguration.connectionManager方法中，而没有进入DefaultFeignLoadBalancedConfiguration.feignClient方法中，
+        说明httpclient已经运用成功。
+
+    方法2：看日志 (需要在logback.xml文件中配置控制台输出日志，并指定级别为DEBUG)
+        在项目控制台中看到如下日志，代表应用httpclient成功。
+        16:27:27.545 [hystrix-eureka-client-5] DEBUG o.a.h.i.c.PoolingHttpClientConnectionManager -
+            Connection request: [route: {}->http://ChenYan:8762][total kept alive: 2; route allocated: 1 of 50; total allocated: 2 of 200]
+        16:27:27.546 [hystrix-eureka-client-5] DEBUG o.a.h.i.c.PoolingHttpClientConnectionManager -
+            Connection leased: [id: 0][route: {}->http://ChenYan:8762][total kept alive: 1; route allocated: 1 of 50; total allocated: 2 of 200]
+
+
+三. 其他说明：
+        也可以参考网上作者的文章： https://juejin.im/post/5ace2d755188257ddb0ffc39

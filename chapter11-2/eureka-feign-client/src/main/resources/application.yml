@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: eureka-feign-client
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  zipkin:
+    base-url: http://localhost:9411/ # 指定了 Zipkin 服务器的地址
+
+server:
+  port: 8765
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+

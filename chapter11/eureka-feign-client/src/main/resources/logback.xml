@@ -1,0 +1,52 @@
+<!-- if debug set to true, context info always print otherwise the contex info will print when error occour -->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <!-- 所有日志文件-->
+    <appender name="AllLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:/temp/idea/%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+   <!-- <appender name="TaskLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/abcchina/task/%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SendLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/abcchina/send/%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    &lt;!&ndash; 包下的所有类指定Appender 这里也可以指定类名称例如：com.aa.bb.ClassName&ndash;&gt;
+    <logger name="com.aa.bb" >
+        <appender-ref ref="TaskLog" />
+    </logger>
+
+    <logger name="com.aa.cc" >
+        <appender-ref ref="SendLog" />
+    </logger>-->
+
+    <root level="DEBUG">
+        <appender-ref ref="AllLog" />
+        <appender-ref ref="stdout" />
+    </root>
+</configuration>

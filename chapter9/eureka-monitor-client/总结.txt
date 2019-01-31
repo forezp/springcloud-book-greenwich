@@ -1,0 +1,66 @@
+
+一： 编写Eureka monitor Client (演示使用Turbine聚合监控多个Hystrix dashboard功能, 此处turbine集群名字为default）
+
+    1.在POM文件中引入依赖：
+                <dependency>
+					<groupId>org.springframework.cloud</groupId>
+					<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+				</dependency>
+
+				<dependency>
+					<groupId>org.springframework.cloud</groupId>
+					<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+				</dependency>
+
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-actuator</artifactId>
+				</dependency>
+
+				<dependency>
+					<groupId>org.springframework.cloud</groupId>
+					<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+				</dependency>
+
+
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-test</artifactId>
+					<scope>test</scope>
+				</dependency>
+
+    2. 配置application.yml
+       spring:
+         application.name: service-turbine
+       server:
+         port: 8769
+
+         # 1. cluster-name-expression指定集群名称，默认表达式appName；此时：turbine.app-config需要配置想要监控的应用名称
+         # 2. 当cluster-name-expression: default时，turbine.aggregator.cluster-config可以不写，因为默认就是default
+         # 3. 当cluster-name-expression: metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.cluster-config: ABC
+       turbine:
+         combine-host-port: true
+         app-config: eureka-ribbon-client,eureka-feign-client
+         cluster-name-expression: new String("default")
+         aggregator:
+           cluster-config: default
+         instanceUrlSuffix: /hystrix.stream # 这里必须设置，否则默认程序会读取/actuator/hystrix.stream
+
+
+       eureka:
+         client:
+           serviceUrl:
+             defaultZone: http://localhost:8761/eureka/
+			 
+	3. EurekaMonitorClientApplication类需要加上@EnableTurbine @EnableEurekaClient @EnableHystrixDashboard注解开启对应的功能。
+
+    4. 启动工程eureka-server、eureka-client、eureka-ribbon-client, eureka-feign-client, eureka-monitor-client。
+
+    5. 在浏览器上分别访问：
+        http://localhost:8764/hi?name=eureka-feign-client
+        http://localhost:8765/hi?name=eureka-ribbon-client
+
+    6. 在浏览器访问http://localhost:8764/hystrix/ 进入Hystrix Dashboard界面。 在界面上一次输入监控刘的Url地址：
+        http://localhost:8769/turbine.stream，监控时间间隔2000毫秒和title， 点击monitor 查看eureka-ribbon-client和eureka-feign-client的Hystrix Dashboard。
+
+

@@ -1,0 +1,46 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 5000
+spring:
+  application:
+    name: service-zuul
+
+#################################################################################################################
+# 以下配置重点介绍zuul路由的配置写法， 有两种方法，具体介绍见下面说明。 方法一和方法二不能同时使用，实际项目使用不推荐第二种方法。
+#################################################################################################################
+# 第一种方法： 将URL转发到指定的serviceId服务，通过指定serviceId=服务名称即可。
+# path 与 servcieId 这两个配置就可以将以"/hiapi"开头的url路由到eureka-client服务。其中zuul.routes.hiapi中的hiapi是自己
+# 定义的，需要制定他的path和serviceId。
+# 同理，url以"/ribbonapi"的请求URL会被分发到eureka-ribbon-client服务。
+# url以"/feignapi"的请求URL会被分发到eureka-feign-client服务。
+# 默认zuul已经结合Ribbon做了负载均衡，会将请求均分的部分路由到不同的服务示例。
+# 其中hiapi, ribbonapi,feignapi 这三个名字可以自己随便定义，只要唯一就行。
+zuul:
+  routes:
+    hiapi:
+      path: /hiapi/**
+      serviceId: eureka-client
+    ribbonapi:
+      path: /ribbonapi/**
+      serviceId: eureka-ribbon-client
+    feignapi:
+      path: /feignapi/**
+      serviceId: eureka-feign-client
+#prefix: /v1  #如果想给每一个服务的API接口加个前缀，就需要配置zuul.prefix配置。 配置之后，访问路径变成/v1/hiapi/**
+
+# 第二种方式： 将URL转发到指定的集群地址，通过指定listOfServers=URL1,URL2即可。【此方式 实际项目中不推荐使用】
+# 以下配置演示指定URL，并且想做负载均衡。这个时候就需要自己维护负载均衡的服务注册列表
+# 首先将ribbon.eureka.enabled设置为false 这样ribbon就不会向客户端Eureka Client获取服务注册列表
+# 需要自己维护一份注册列表，listOfServers 来配置多个负载均衡的Url
+#zuul:
+#  routes:
+#    hiapi:
+#      path: /hiapi/**
+
+#ribbon:
+# eureka:
+#    enabled: false
+# listOfServers: http://localhost:8762,http://localhost:8763

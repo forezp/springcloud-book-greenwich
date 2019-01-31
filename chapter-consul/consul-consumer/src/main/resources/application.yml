@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka-feign-client
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: consul-consumer
+server:
+  port: 8765
+
+

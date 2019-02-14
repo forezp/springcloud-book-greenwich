@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: admin-server
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+server:
+  port: 9998
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+#server:
+#  port: 9998
+#security:
+#  user:
+#    name: admin
+#    password: 123456
+#management:
+#  security:
+#    enabled: false
+#
+#spring:
+#  boot:
+#    admin:
+#      routes:
+#        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,activiti
+#      turbine:
+#        clusters: default
+#        location: monitor-service
+#
+#eureka:
+#  instance:
+#    metadata-map:
+#      user.name: admin
+#      user.password: 123456
+
+logging:
+  file: "logs/admin-service-pro.log"

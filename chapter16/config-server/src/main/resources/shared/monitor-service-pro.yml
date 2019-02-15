@@ -1,12 +1,20 @@
 server:
   port: 8766
-security.basic.enabled: false
-turbine:
-  aggregator:
-    clusterConfig: default
-  appConfig: user-service , blog-service
-  clusterNameExpression: new String("default")
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+turbine:
+  app-config: blog-service,user-service
+  aggregator:
+    clusterConfig: default
+  clusterNameExpression: new String("default")
+  combine-host: true
+  instanceUrlSuffix:
+    default: actuator/hystrix.stream

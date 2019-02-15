@@ -11,9 +11,13 @@
 #            timeoutInMilliseconds: 10000
 
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
 
 #endpoints:
 #  health:
@@ -28,8 +32,14 @@ eureka:
 
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
 
 feign:
   hystrix:

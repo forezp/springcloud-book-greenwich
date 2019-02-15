@@ -21,17 +21,17 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="admin-service" target="8" />
-      <module name="blog-service" target="8" />
-      <module name="common" target="8" />
-      <module name="config-server" target="8" />
-      <module name="eureka-server" target="8" />
-      <module name="gateway-service" target="8" />
-      <module name="log-service" target="8" />
-      <module name="monitor-service" target="8" />
-      <module name="SpringCloudInAction" target="8" />
-      <module name="uaa-service" target="8" />
-      <module name="user-service" target="8" />
+      <module name="admin-service" target="1.8" />
+      <module name="blog-service" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="config-server" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="gateway-service" target="1.8" />
+      <module name="log-service" target="1.8" />
+      <module name="monitor-service" target="1.8" />
+      <module name="SpringCloudInAction" target="1.8" />
+      <module name="uaa-service" target="1.8" />
+      <module name="user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

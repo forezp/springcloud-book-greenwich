@@ -59,7 +59,7 @@ Eureka的一些概念:
     当有一个新的Eureka Se凹er 出现时，它尝试从相邻Peer 节点获取所有服务实例注册表信息。如果从相邻的Peer 节点获取信息时出现了故障， Eureka Server 会尝试其他的Peer 节点。
     如果Eureka Serve 能够成功获取所有的服务实例信息，则根据配置信息设置服务续约的阀值。在任何时间，如果Eureka Serve 接收到的服务续约低于为该值配置的百分比（默认为15 分钟
     内低于85% ），则服务器开启自我保护模式，即不再剔除注册列表的信息。
-    这样做的好处在于，如果是Eureka Server 自身的网络问题而导致E ureka Cli阳it 无法续约，Eureka Client 的注册列表信息不再被删除，也就是Eureka Client 还可以被其他服务消费。
+    这样做的好处在于，如果是Eureka Server 自身的网络问题而导致E ureka Client 无法续约，Eureka Client 的注册列表信息不再被删除，也就是Eureka Client 还可以被其他服务消费。
     在默认情况下， Eureka Server 的自我保护模式是开启的，如果雨要关闭，则在阳直文件添加以下代码：
     eureka:
         server:

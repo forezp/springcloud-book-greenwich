@@ -34,12 +34,11 @@ public class UserController {
       return   userService.saveUser(user);
 
     }
-    @ApiOperation(value="获用户细信息", notes="根据url的id来获取详细信息")
-
-    @RequestMapping(value="/{id}", method= RequestMethod.GET)
-    public Optional<User> getUser(@PathVariable Long id) {
-        return userService.findUserById(id);
-    }
+//    @ApiOperation(value="获用户细信息", notes="根据url的id来获取详细信息")
+//    @RequestMapping(value="/{id}", method= RequestMethod.GET)
+//    public Optional<User> getUser(@PathVariable Long id) {
+//        return userService.findUserById(id);
+//    }
 
     @ApiOperation(value="更新信息", notes="根据url的id来指定更新用户信息")
     @RequestMapping(value="/{id}", method= RequestMethod.PUT)
@@ -66,11 +65,11 @@ public class UserController {
 
 
 
-//    @GetMapping("/{username}")
-//    public User getUser(@PathVariable("username")String username){
-//       return userService.findUserByName(username);
-//
-//    }
+    @GetMapping("/username/{username}")
+    public User getUser(@PathVariable("username")String username){
+       return userService.findUserByName(username);
+
+    }
 
 
 

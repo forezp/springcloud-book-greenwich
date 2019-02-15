@@ -1,0 +1,17 @@
+my:
+ name: forezp
+ age: 12
+ number:  ${random.int}
+ uuid : ${random.uuid}
+ max: ${random.int(10)}
+ value: ${random.value}
+ greeting: hi,i'm  ${my.name}
+
+#多个环境的配置文件切换
+# active=dev 读取application-dev.yml配置文件
+# active=pro 读取application-pro.yml配置文件
+spring:
+  profiles:
+    active: dev
+
+

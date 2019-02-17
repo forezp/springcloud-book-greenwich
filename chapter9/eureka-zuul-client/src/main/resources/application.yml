@@ -43,4 +43,7 @@ zuul:
 #ribbon:
 # eureka:
 #    enabled: false
-# listOfServers: http://localhost:8762,http://localhost:8763
+#hiapi-v1:
+#  ribbon:
+#    listOfServers: http://localhost:8762,http://localhost:8763
+

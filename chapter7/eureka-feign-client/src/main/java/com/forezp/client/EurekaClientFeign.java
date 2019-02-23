@@ -1,6 +1,5 @@
 package com.forezp.client;
 
-import com.forezp.client.config.FeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 在接口上加＠FeignClient 注解来声明一个Feign Client,其中value 为远程调用其他服务的服务名， FeignConfig.class 为Feign Client 的配置类
  *
  */
-@FeignClient(value = "eureka-client",configuration = FeignConfig.class)
+@FeignClient(value = "eureka-client")
 public interface EurekaClientFeign {
 
     /**

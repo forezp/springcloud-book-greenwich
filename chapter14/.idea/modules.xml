@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/chapter1.iml" filepath="$PROJECT_DIR$/chapter1.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-auth/service-auth.iml" filepath="$PROJECT_DIR$/service-auth/service-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-auth/service-auth.iml" filepath="$PROJECT_DIR$/service-auth/service-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-hi/service-hi.iml" filepath="$PROJECT_DIR$/service-hi/service-hi.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-hi/service-hi.iml" filepath="$PROJECT_DIR$/service-hi/service-hi.iml" />
     </modules>
   </component>

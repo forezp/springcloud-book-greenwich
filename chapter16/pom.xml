@@ -17,7 +17,7 @@
         <module>user-service</module>
         <module>monitor-service</module>
         <module>uaa-service</module>
-        <module>blog-service</module>
+        <module>log-service</module>
         <module>common</module>
         <module>admin-service</module>
     </modules>

@@ -2,290 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86d61acd-ccd4-468c-8c02-6241cf989e15" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter11-2/eureka-feign-client/src/main/resources/logback.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter11/D:/temp/idea/2019-01-29.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter11/D:/temp/idea/2019-01-30.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter11/eureka-feign-client/src/main/java/com/forezp/client/config/FeignConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter11/eureka-feign-client/src/main/java/com/forezp/logging/FeignClientConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter11/eureka-feign-client/src/main/resources/logback.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_eureka_eureka_client_1_9_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_eureka_eureka_core_1_9_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_hystrix_hystrix_core_1_5_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_ribbon_ribbon_2_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_ribbon_ribbon_core_2_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_ribbon_ribbon_eureka_2_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_ribbon_ribbon_httpclient_2_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_ribbon_ribbon_loadbalancer_2_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_ribbon_ribbon_transport_2_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_github_openfeign_feign_core_9_5_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_github_openfeign_feign_hystrix_9_5_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_9_5_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_micrometer_micrometer_core_1_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_netty_netty_buffer_4_1_25_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_netty_netty_codec_4_1_25_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_25_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_netty_netty_common_4_1_25_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_netty_netty_resolver_4_1_25_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_netty_netty_transport_4_1_25_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_4_1_25_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_25_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__joda_time_joda_time_2_9_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_10_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_10_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_31.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_31.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_31.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_17_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_2_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_10_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_mockito_mockito_core_2_15_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_0_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_archaius_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_core_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_client_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_server_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_ribbon_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_security_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_archaius_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_client_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_server_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_ribbon_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_oauth2_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_0_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_0_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_5_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_aop_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_beans_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_context_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_core_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_expression_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_orm_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_test_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_tx_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_web_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_5_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter7/D:/temp/idea/2019-02-16.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter7/D:/temp/idea/2019-02-17.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter7/eureka-feign-client/src/main/java/com/forezp/client/config/FeignConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter7/eureka-feign-client/src/main/java/com/forezp/logging/FeignClientConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter7/eureka-feign-client/src/main/resources/logback.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter7/eureka-feign-httpclient/src/main/java/com/forezp/client/config/FeignConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter7/eureka-feign-httpclient/src/main/java/com/forezp/logging/FeignClientConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../chapter7/eureka-feign-httpclient/src/main/resources/logback.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/.mvn/wrapper/maven-wrapper.jar" afterPath="$PROJECT_DIR$/../chapter13/.mvn/wrapper/maven-wrapper.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/.mvn/wrapper/maven-wrapper.jar" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/.mvn/wrapper/maven-wrapper.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/.mvn/wrapper/maven-wrapper.jar" afterPath="$PROJECT_DIR$/../chapter14/service-auth/.mvn/wrapper/maven-wrapper.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/.mvn/wrapper/maven-wrapper.jar" afterPath="$PROJECT_DIR$/../chapter14/service-hi/.mvn/wrapper/maven-wrapper.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter11/eureka-feign-client/src/main/java/com/forezp/client/EurekaClientFeign.java" afterPath="$PROJECT_DIR$/../chapter11/eureka-feign-client/src/main/java/com/forezp/client/EurekaClientFeign.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/.gitignore" afterPath="$PROJECT_DIR$/../chapter13/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/.mvn/wrapper/maven-wrapper.properties" afterPath="$PROJECT_DIR$/../chapter13/.mvn/wrapper/maven-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/mvnw" afterPath="$PROJECT_DIR$/../chapter13/mvnw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/mvnw.cmd" afterPath="$PROJECT_DIR$/../chapter13/mvnw.cmd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/pom.xml" afterPath="$PROJECT_DIR$/../chapter13/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/SpringbootSecurityApplication.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/SpringbootSecurityApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/config/MyPasswordEncoder.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/config/MyPasswordEncoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/config/SecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/dao/UserDao.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/entity/Blog.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/entity/Blog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/entity/Role.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/entity/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/entity/User.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/service/IBlogService.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/service/IBlogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/service/impl/BlogService.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/service/impl/BlogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/service/impl/UserService.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/service/impl/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/web/BlogController.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/web/BlogController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/web/MainController.java" afterPath="$PROJECT_DIR$/../chapter13/src/main/java/com/forezp/web/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/../chapter13/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/resources/scheme.sql" afterPath="$PROJECT_DIR$/../chapter13/src/main/resources/scheme.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/resources/static/css/main.css" afterPath="$PROJECT_DIR$/../chapter13/src/main/resources/static/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/401.html" afterPath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/401.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/blogs/list.html" afterPath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/blogs/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/login.html" afterPath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/user/index.html" afterPath="$PROJECT_DIR$/../chapter13/src/main/resources/templates/user/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter13/src/test/java/com/forezp/SpringbootSecurityApplicationTests.java" afterPath="$PROJECT_DIR$/../chapter13/src/test/java/com/forezp/SpringbootSecurityApplicationTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/kotlinc.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/kotlinc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_0_3.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_github_andrewoma_dexx_dexx_collections_0_2.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_github_andrewoma_dexx_dexx_collections_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_github_vlsi_compactmap_compactmap_1_2_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_github_vlsi_compactmap_compactmap_1_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_google_guava_guava_16_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_google_guava_guava_16_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_archaius_archaius_core_0_7_6.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_archaius_archaius_core_0_7_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_commons_util_0_3_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_commons_util_0_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_eventbus_0_3_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_eventbus_0_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_infix_0_3_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_infix_0_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_statistics_0_1_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_statistics_0_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_servo_servo_core_0_12_21.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_netflix_servo_servo_core_0_12_21.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_apache_client4_1_19_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_apache_client4_1_19_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_19_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_19_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_jersey_servlet_1_19_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_sun_jersey_jersey_servlet_1_19_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_10.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_10.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_configuration_commons_configuration_1_8.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_configuration_commons_configuration_1_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_jxpath_commons_jxpath_1_3.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_jxpath_commons_jxpath_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_reactivex_rxjava_1_3_8.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_reactivex_rxjava_1_3_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_reactivex_rxnetty_0_4_9.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_reactivex_rxnetty_0_4_9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_reactivex_rxnetty_contexts_0_4_9.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_reactivex_rxnetty_contexts_0_4_9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_reactivex_rxnetty_servo_0_4_9.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__io_reactivex_rxnetty_servo_0_4_9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_antlr_antlr_runtime_3_4.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_antlr_antlr_runtime_3_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_56.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_56.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_56.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_56.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_7.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_security_2_0_0_RELEASE.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_security_2_0_0_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_oauth_boot_spring_security_oauth2_autoconfigure_2_0_0_RELEASE.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_oauth_boot_spring_security_oauth2_autoconfigure_2_0_0_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_oauth_spring_security_oauth2_2_2_1_RELEASE.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_oauth_spring_security_oauth2_2_2_1_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_spring_security_jwt_1_0_9_RELEASE.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__org_springframework_security_spring_security_jwt_1_0_9_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/misc.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/modules.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../chapter14/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/chapter1.iml" afterPath="$PROJECT_DIR$/../chapter14/chapter1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/.gitignore" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/.mvn/wrapper/maven-wrapper.properties" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/.mvn/wrapper/maven-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/mvnw" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/mvnw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/mvnw.cmd" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/mvnw.cmd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/pom.xml" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/src/main/java/com/forezp/EurekaServerApplication.java" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/src/main/java/com/forezp/EurekaServerApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/eureka-server/src/test/java/com/forezp/EurekaServerApplicationTests.java" afterPath="$PROJECT_DIR$/../chapter14/eureka-server/src/test/java/com/forezp/EurekaServerApplicationTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/pom.xml" afterPath="$PROJECT_DIR$/../chapter14/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/.gitignore" afterPath="$PROJECT_DIR$/../chapter14/service-auth/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/.mvn/wrapper/maven-wrapper.properties" afterPath="$PROJECT_DIR$/../chapter14/service-auth/.mvn/wrapper/maven-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/mvnw" afterPath="$PROJECT_DIR$/../chapter14/service-auth/mvnw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/mvnw.cmd" afterPath="$PROJECT_DIR$/../chapter14/service-auth/mvnw.cmd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/pom.xml" afterPath="$PROJECT_DIR$/../chapter14/service-auth/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/ServiceAuthApplication.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/ServiceAuthApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/config/WebSecurityConfig.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/config/WebSecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/controller/UserController.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/domain/Role.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/domain/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/domain/User.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/repository/UserDao.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/repository/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/service/UserService.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/service/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/service/security/UserServiceDetail.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/java/com/forezp/service/security/UserServiceDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/main/resources/bootstrap.yml" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/main/resources/bootstrap.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-auth/src/test/java/com/forezp/ServiceAuthApplicationTests.java" afterPath="$PROJECT_DIR$/../chapter14/service-auth/src/test/java/com/forezp/ServiceAuthApplicationTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/.gitignore" afterPath="$PROJECT_DIR$/../chapter14/service-hi/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/.mvn/wrapper/maven-wrapper.properties" afterPath="$PROJECT_DIR$/../chapter14/service-hi/.mvn/wrapper/maven-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/mvnw" afterPath="$PROJECT_DIR$/../chapter14/service-hi/mvnw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/mvnw.cmd" afterPath="$PROJECT_DIR$/../chapter14/service-hi/mvnw.cmd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/pom.xml" afterPath="$PROJECT_DIR$/../chapter14/service-hi/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/ServiceHiApplication.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/ServiceHiApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/config/OAuth2ClientConfig.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/config/OAuth2ClientConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/config/ResourceServerConfigurer.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/config/ResourceServerConfigurer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/controller/HiController.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/controller/HiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/controller/UserController.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/domain/Role.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/domain/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/domain/User.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/repository/UserDao.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/repository/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/security/CustomUserInfoTokenServices.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/security/CustomUserInfoTokenServices.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/java/com/forezp/service/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/main/resources/bootstrap.yml" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/main/resources/bootstrap.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/service-hi/src/test/java/com/forezp/ServiceHiApplicationTests.java" afterPath="$PROJECT_DIR$/../chapter14/service-hi/src/test/java/com/forezp/ServiceHiApplicationTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter14/sql/spring-cloud-auth.sql" afterPath="$PROJECT_DIR$/../chapter14/sql/spring-cloud-auth.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter7/eureka-feign-client/src/main/java/com/forezp/client/EurekaClientFeign.java" afterPath="$PROJECT_DIR$/../chapter7/eureka-feign-client/src/main/java/com/forezp/client/EurekaClientFeign.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chapter7/eureka-feign-httpclient/src/main/java/com/forezp/client/EurekaClientFeign.java" afterPath="$PROJECT_DIR$/../chapter7/eureka-feign-httpclient/src/main/java/com/forezp/client/EurekaClientFeign.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -353,9 +71,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -531,9 +247,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -548,6 +263,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -989,12 +705,84 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.GatewayServiceApplication" />
-      <item index="1" class="java.lang.String" itemvalue="Application.LogServiceApplication" />
-      <item index="2" class="java.lang.String" itemvalue="Application.MonitorServiceApplication" />
-      <item index="3" class="java.lang.String" itemvalue="Application.UaaServiceApplication" />
-      <item index="4" class="java.lang.String" itemvalue="Application.UserServiceApplication" />
+    <configuration default="false" name="BlogServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.BlogServiceApplication" />
+      <module name="blog-service" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="UaaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.UaaServiceApplication" />
+      <module name="uaa-service" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="AdminServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.AdminServiceApplication" />
+      <module name="admin-service" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.EurekaServerApplication" />
+      <module name="eureka-server" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.GatewayServiceApplication" />
+      <module name="gateway-service" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LogServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.LogServiceApplication" />
+      <module name="log-service" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="MonitorServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.MonitorServiceApplication" />
+      <module name="monitor-service" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.ConfigServerApplication" />
+      <module name="config-server" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.forezp.UserServiceApplication" />
+      <module name="user-service" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="14">
+      <item index="0" class="java.lang.String" itemvalue="Spring Boot.BlogServiceApplication" />
+      <item index="1" class="java.lang.String" itemvalue="Spring Boot.UaaServiceApplication" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.AdminServiceApplication" />
+      <item index="3" class="java.lang.String" itemvalue="Spring Boot.EurekaServerApplication" />
+      <item index="4" class="java.lang.String" itemvalue="Spring Boot.GatewayServiceApplication" />
+      <item index="5" class="java.lang.String" itemvalue="Spring Boot.LogServiceApplication" />
+      <item index="6" class="java.lang.String" itemvalue="Spring Boot.MonitorServiceApplication" />
+      <item index="7" class="java.lang.String" itemvalue="Spring Boot.ConfigServerApplication" />
+      <item index="8" class="java.lang.String" itemvalue="Spring Boot.UserServiceApplication" />
+      <item index="9" class="java.lang.String" itemvalue="Application.GatewayServiceApplication" />
+      <item index="10" class="java.lang.String" itemvalue="Application.LogServiceApplication" />
+      <item index="11" class="java.lang.String" itemvalue="Application.MonitorServiceApplication" />
+      <item index="12" class="java.lang.String" itemvalue="Application.UaaServiceApplication" />
+      <item index="13" class="java.lang.String" itemvalue="Application.UserServiceApplication" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -1051,7 +839,8 @@
       <workItem from="1513135527706" duration="83000" />
       <workItem from="1522219829150" duration="557000" />
       <workItem from="1522309315389" duration="619000" />
-      <workItem from="1550913118433" duration="52000" />
+      <workItem from="1550913118433" duration="278000" />
+      <workItem from="1551010563858" duration="295000" />
     </task>
     <servers />
   </component>
@@ -1088,42 +877,44 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142832000" />
+    <option name="totallyTimeSpent" value="143353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="23" width="1234" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="LuaCheck" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaCheck" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25419462" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1158,6 +949,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config-server/src/main/resources/shared/blog-service-pro.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1178,9 +977,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1482,9 +1279,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>

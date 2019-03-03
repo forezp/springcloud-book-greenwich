@@ -24,4 +24,4 @@ management:
     health:
       show-details: ALWAYS
 server:
-  port: 8762
+  port: 8768

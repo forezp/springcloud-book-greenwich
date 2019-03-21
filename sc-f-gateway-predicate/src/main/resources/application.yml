@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   profiles:
-    active: cookie_route
+    active: query_route2
 
 ---
 spring:
@@ -43,7 +43,7 @@ spring:
     gateway:
       routes:
       - id: host_route
-        uri: http://httpbin.org:80/get
+        uri: http://httpbin.org:80
         predicates:
         - Host=**.fangzhipeng.com
   profiles: host_route
@@ -66,9 +66,9 @@ spring:
     gateway:
       routes:
       - id: path_route
-        uri: http://httpbin.org:80/get
+        uri: https://blog.csdn.net
         predicates:
-        - Path=/foo/{segment}
+        - Path=/forezp/article/details/{segment}
   profiles: path_route
 
 ---
@@ -77,7 +77,18 @@ spring:
     gateway:
       routes:
       - id: query_route
-        uri: http://httpbin.org:80/get
+        uri: http://httpbin.org:80
         predicates:
         - Query=foo, ba.
   profiles: query_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: query_route
+          uri: http://httpbin.org:80/get
+          predicates:
+            - Query=foo
+  profiles: query_route2

@@ -10,7 +10,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="sc-f-gateway-filter" target="8" />
+      <module name="sc-f-gateway-filter" target="1.7" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="sc-f-gateway-filter" options="-parameters" />
+    </option>
   </component>
 </project>

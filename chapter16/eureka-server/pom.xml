@@ -9,11 +9,11 @@
 	<packaging>jar</packaging>
 
 	<name>eureka-server</name>
-	<description>Eureka Server project for Spring Boot</description>
+	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>com.forezp</groupId>
-		<artifactId>SpringCloudInAction</artifactId>
+		<artifactId>spring-cloud-auth</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
@@ -28,12 +28,9 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
 
 	</dependencies>
+
 
 	<build>
 		<plugins>
@@ -43,6 +40,17 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 
 </project>

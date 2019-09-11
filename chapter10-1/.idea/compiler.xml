@@ -6,14 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="config-client" />
-        <module name="config-server" />
+        <module name="sc-f-gateway-first-sight" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="chapter10" target="1.8" />
-      <module name="config-client" target="1.8" />
-      <module name="config-server" target="1.8" />
+      <module name="sc-f-gateway-first-sight" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="sc-f-gateway-first-sight" options="-parameters" />
+    </option>
   </component>
 </project>

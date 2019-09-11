@@ -10,10 +10,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>eureka-client</module>
-        <module>eureka-server</module>
-		<module>eureka-feign-client</module>
-
+        <module>consul-consumer</module>
+		<module>consul-provider</module>
     </modules>
 
     <parent>

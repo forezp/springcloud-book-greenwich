@@ -21,9 +21,6 @@
 
 ### 书籍购买地址
 
-
-![1.jpg](https://img-blog.csdnimg.cn/20190918125045458.jpg)
-
 [点击购买书籍-京东](https://item.jd.com/12698004.html)
 
 [点击购买书籍-当当](http://product.dangdang.com/27927033.html)
@@ -31,5 +28,7 @@
 [点击购买书籍-亚马逊](https://www.amazon.cn/dp/B079J8SCGY/ref=sr_1_2?ie=UTF8&qid=1521344315&sr=8-2&keywords=spring+cloud)
 
 
+
+![1.jpg](https://img-blog.csdnimg.cn/20190918125045458.jpg)
 
 
